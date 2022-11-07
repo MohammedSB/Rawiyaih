@@ -1,0 +1,1 @@
+Rawiyaih\ (راوية) is an Arabic website aiming to build a community for writers and novelists across the globe.The website provides easy access for writers to connect with other writers,publish and read books and novels created by the community.
