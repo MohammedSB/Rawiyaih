@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: red;
+    height: 70px;
+    font-size: 24px;
+    text-align: center;
+}
+.logo {
+    width: 80%;
+    height: 120%;
+    background-color: coral;
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+    
+}
+
+span {
+    vertical-align: middle;
+    font-size: 24px;
+    text-align: center;
+}

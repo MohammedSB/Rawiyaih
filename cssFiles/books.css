@@ -1,0 +1,121 @@
+
+.new-book {
+    cursor: pointer;
+    text-decoration: none;
+    clear: both;
+    display: block;
+}
+
+.book {
+    width: 220px;
+    height: 300px;
+    float: right;
+    transition-duration: 0.4s;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    margin-left: 15px;
+    -webkit-font-smoothing: antialiased;   
+    
+    
+}
+
+.book-title {
+    text-align: right;
+    color: black;
+    position: relative;
+    bottom: -10px;
+    font-size: 32px;
+    right:620px;
+    width:600px;
+    font-weight: 500;
+}
+
+.book-writer {
+    text-align: right;
+    font-size: 16px;
+    color: rgb(53, 53, 53);
+    position: relative;
+    bottom: -18px;
+    right:620px;
+    width:600px;
+    font-weight: 500;
+}
+
+.book-desc {
+    text-align: right;
+    font-size: 20px;
+    color: black;
+    position: relative;
+    bottom: -25px;
+    right:620px;
+    width:600px;
+    height: 140px;
+    font-weight: 500;
+    overflow: hidden;
+}
+
+.new-book-title {
+    font-size: 40px;
+    text-align: center;
+    margin-top: 20px;
+    color:black;
+    position: relative;
+}
+
+.expand{
+    font-size: 0.9em;
+    width: 230px;
+    height: 310px;
+    box-shadow: rgba(0, 0, 0, 0.6);
+    font-weight: 500;
+}
+
+.new-book-logo-container {
+    width: 100%;
+    height: 120px;
+    align-content: center;
+    text-align: center;
+    background-color: black;
+
+}
+.new-book-logo {
+    width: 100px;
+    height: 100px;
+
+}
+
+.book-status-container {
+    position: relative;
+    bottom: -15px;
+    color: rgb(4, 80, 4);
+    font-size: 32px;
+    left:-100px;
+    width: 200px;
+    text-align: center;
+    line-height: 30px;
+    background-color: rgb(5, 83, 5);
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.book-status {
+    color: white;
+    font-size: 18px;
+}
+.book-status-new {
+    position: relative;
+    bottom: 40px;
+    color: rgb(184, 2, 2);
+    font-size: 32px;
+    left: -200px;
+    width: 240px;
+
+}
+
+.book-cover {
+    width: 220px;
+    height: 300px;
+    position: absolute;
+    z-index: 0;
+}
