@@ -33,7 +33,7 @@ $(document).ready(function () {
 <div class="container">
     <div class="about-page-container">
         <div class="about-page-content">
-            <p><h1 class="content"> اهلآ بك في راوية</h1></p>
+            <p><h1 class="content"> w اهلآ بك في راوية</h1></p>
             <h2 class="content" style="font-size: 3rem; color: rgba(255, 255, 255, 0.85); ">موقع لكتابة و نشر القصص و الروايات العربية</h2>
             <span class = "icon-lock"></span>
             
