@@ -1,0 +1,22 @@
+*{
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color:#E4E3D5;
+}
+
+.about-page-container {
+    background-image: url(/static/media/about_page.jpg);
+    background-position: center;
+    background-size: cover;
+    min-height: 800px;    
+}
+
+.about-page-content {
+    height: 100%;
+    width: 90%;
+    padding-top: 100px;
+    margin: auto;
+    position: absolute;
+}
