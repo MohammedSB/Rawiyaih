@@ -3,14 +3,14 @@
 }
 
 body {
-    background-color:#E4E3D5;
+    background-color:red;
 }
 
 .about-page-container {
     background-image: url(/static/media/about_page.jpg);
     background-position: center;
     background-size: cover;
-    min-height: 800px;    
+    height: 50%;   
 }
 
 .about-page-content {
