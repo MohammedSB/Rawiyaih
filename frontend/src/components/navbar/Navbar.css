@@ -1,0 +1,24 @@
+* {
+    color:white;
+    font-size: 24px;
+}
+
+.navbar-container {
+    height: 50px;
+    background-color: rgb(109, 3, 3);
+}
+
+.navbar-item {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+    float: right;
+    height: 100%;
+    width: 150px;
+    text-align: center;
+}
+
+#login {
+    float:left;
+}
