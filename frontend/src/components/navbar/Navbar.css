@@ -9,10 +9,12 @@
 }
 
 .navbar-item {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     flex-direction: column;
     
+    margin-left: 40px;;
     float: right;
     height: 100%;
     width: 150px;
@@ -21,4 +23,15 @@
 
 #login {
     float:left;
+}
+
+.medium-screen {display: none;}
+
+@media (max-width: 768px) {
+    .large-screen  {
+        display: none;  
+    }
+    .medium-screen {
+        display: initial;
+    }
 }

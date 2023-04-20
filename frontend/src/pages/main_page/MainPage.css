@@ -1,0 +1,11 @@
+.info-container {
+    background-image: url(../../media/about_page.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 700px;    
+}
+
+.info-container img {
+    object-fit: contain;
+}

@@ -1,5 +1,10 @@
+@font-face {
+  font-family: Tajawul;
+  src: url(./fonts/Tajawal-Regular.ttf);
+}
+
 * {
-  font-family: 'Tajawal', sans-serif;
+  font-family: Tajawul;
   margin: 0;
   padding: 0;
 }

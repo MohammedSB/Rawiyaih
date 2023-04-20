@@ -1,19 +1,43 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import { ReactComponent as Dropdown } from '../../media/common/dropdown.svg';
+import LoginPop from '../loginpop/LoginPop';
 import './Navbar.css';
 
-export default function Header() {
+export default function Navbar() {
+
+    const [showLogin, setShowLogin] = useState(false);
+
+    function toggleShowLogin() {
+        setShowLogin(!showLogin);
+    }
+
     return (
         <>
         <div 
         className='navbar-container'>
 
-            <div className='navbar-item'>ابدا الكتابة</div>
+            {showLogin && (
+                <LoginPop
+                toggleShowLogin={toggleShowLogin}
+                />
+            )}
+
+            <screen className='large-screen'>
+
+            <div className='navbar-item' style={{color:"#DAA520"}}>ابدا الكتابة</div>
             <div className='navbar-item'>المكتبة</div>
             <div className='navbar-item'>المجتمع</div>
 
+            </screen>
 
-            <div className='navbar-item' id='login'>تسجيل الدخول</div>
+            <screen className='medium-screen'>
+            
+            <div className='navbar-item'><Dropdown></Dropdown></div>
 
+            </screen>
+
+            <div className='navbar-item' id='login' onClick={() => toggleShowLogin()}>تسجيل الدخول</div>
+            
         </div>
         </>
     )

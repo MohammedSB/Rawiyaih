@@ -1,12 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
-import Header from './components/navbar/Navbar.jsx';
+import MainPage from './pages/main_page/MainPage';
+import Register from './pages/register/Register';
+import { Routes, Route } from "react-router-dom"
 
 function App() {
   return (
-    <div className="App">
-      <Header></Header>
-    </div>
+    <Routes> 
+      <Route path='/' element={<MainPage/>}/>
+      <Route path='register' element={<Register/>}/>
+    </Routes>
   );
 }
 
