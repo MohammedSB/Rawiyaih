@@ -1,3 +1,7 @@
+body {
+    background-color:#E4E3D5;
+}
+
 .info-container {
     background-image: url(../../media/about_page.jpg);
     background-position: center;

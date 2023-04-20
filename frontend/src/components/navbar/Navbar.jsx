@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ReactComponent as Dropdown } from '../../media/common/dropdown.svg';
+import { ReactComponent as Dropdown } from '../../media/common/dropdown-white.svg';
 import LoginPop from '../loginpop/LoginPop';
 import './Navbar.css';
 
@@ -32,7 +32,7 @@ export default function Navbar() {
 
             <screen className='medium-screen'>
             
-            <div className='navbar-item'><Dropdown></Dropdown></div>
+            <div className='navbar-item' id='dropdown'><Dropdown></Dropdown></div>
 
             </screen>
 

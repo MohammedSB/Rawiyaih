@@ -2,8 +2,22 @@ import React from "react";
 import "./LoginPop.css";
 import { ReactComponent as Close } from '../../media/common/close.svg';
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+
 
 export default function LoginPop({toggleShowLogin}) {
+
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+
+    const onSubmit = data => {
+        axios.get('http://127.0.0.1:8000/api/users/login-user/', data)
+        .then(function (response) {
+            console.log(response);
+        })
+        console.log(data);
+    }
+
     return (
         <>
         <div className="popup">
@@ -15,15 +29,14 @@ export default function LoginPop({toggleShowLogin}) {
         
             </div>
             
-            <div className="popup-form">
-                <input type="text" name="name" placeholder="الاسم"></input>
-                <input type="password" name="password" placeholder="كلمة المرور"></input>
+            <form className="popup-form" method="get" onSubmit={handleSubmit(onSubmit)}>
+                <input {...register("name")} type="text" name="name" placeholder="الاسم"></input>
+                <input {...register("password")} type="password" name="password" placeholder="كلمة المرور"></input>
                 <button className="login">تسجيل دخول</button>
-            </div>
+            </form>
 
             <div className="popup-footer">
-                <p>ليس لديك حساب؟<Link to="register"> إنشاء حساب جديد</Link>    
-                </p>
+                <p>ليس لديك حساب؟<Link to="register"> إنشاء حساب جديد</Link></p>
             </div>
 
             </div>
