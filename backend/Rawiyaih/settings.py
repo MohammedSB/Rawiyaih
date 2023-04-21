@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 
 CORS_ALLOWED_ORIGINS = [ 
     'http://localhost:3000',
+    'http://127.0.0.1:3000'
 ]
 
 
@@ -49,8 +50,17 @@ INSTALLED_APPS = [
     'api.users.apps.UsersConfig',
 
     'rest_framework',
+    'rest_framework.authtoken'
     
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        # 'rest_framework.authentication.TokenAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',     
+    ]
+}
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -62,6 +72,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+AUTH_USER_MODEL = 'users.User'
 
 ROOT_URLCONF = 'Rawiyaih.urls'
 
