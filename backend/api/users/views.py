@@ -4,7 +4,12 @@ from rest_framework.decorators import api_view, authentication_classes, permissi
 from rest_framework.response import Response
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
-from .serializers import UserSerializer
+from .serializers import UserSerializer, CustomTokenObtainPairSerializer
+from rest_framework_simplejwt.views import TokenObtainPairView
+from django.contrib.auth.hashers import make_password, check_password
+
+class CustomTokenObtainPairView(TokenObtainPairView):
+    serializer_class = CustomTokenObtainPairSerializer
 
 @api_view(['GET'])
 def api(request):
@@ -18,8 +23,11 @@ def api(request):
 
 @api_view(['POST'])
 def userCreate(request):
+    # Hash password before saving
+    request.data['password'] = make_password(request.data['password'])
+    
     serializer = UserSerializer(data=request.data)
-
+    print(serializer)
     if serializer.is_valid():
         serializer.save()
 
@@ -29,7 +37,6 @@ def userCreate(request):
 @authentication_classes([SessionAuthentication, BasicAuthentication])
 @permission_classes([IsAuthenticated])
 def userLogin(request):
-    print("Hiiii")
     print(request)
     content = {
         'user': str(request.user),  # `django.contrib.auth.User` instance.

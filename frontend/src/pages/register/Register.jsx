@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 import "./Register.css";
+import Button from '../../components/Button/Button'
 
 export default function Register() {
     
@@ -11,7 +12,7 @@ export default function Register() {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         const payload = {
-            name: data.name,
+            username: data.username,
             email: data.email,
             password: data.password,
         }
@@ -24,6 +25,10 @@ export default function Register() {
             console.log(error);
         });
     };
+
+    const onChange = (e) => {
+        
+    } 
 
     return (
         <>
@@ -42,10 +47,10 @@ export default function Register() {
 
 
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
-            <input {...register("name")} type="text" name="name" placeholder="الاسم"></input>
-            <input {...register("email")} type="email" name="email" placeholder="البريد الالكتروني"></input>
-            <input {...register("password")} type="password" name="password" placeholder="كلمة المرور"></input>
-            <button type="submit" className="login">تسجيل</button>
+            <input {...register("username", { required: true })} type="text" name="username" placeholder="الاسم"></input>
+            <input {...register("email", { required: true })} type="email" name="email" placeholder="البريد الالكتروني"></input>
+            <input {...register("password", { required: true })} type="password" name="password" placeholder="كلمة المرور"></input>
+            <Button placeholder={"تسجيل"}></Button>
         </form>
         </div>
         </div>
