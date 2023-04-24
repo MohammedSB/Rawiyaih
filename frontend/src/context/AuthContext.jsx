@@ -28,17 +28,18 @@ export function AuthProvider() {
     const navigate = useNavigate();
 
     function loginUser(data) {
-        axios.post('http://127.0.0.1:8000/api/users/token/', {
+        const result = axios.post('http://127.0.0.1:8000/api/users/token/', {
             'username': data.username,
             'password': data.password,
         }).then(function (response) {
-            if (response.status == 200) {
+            if (response.status === 200) {
                 setAuthTokens(response.data);
                 setUser(jwt_decode(response.data.access))
                 localStorage.setItem('authTokens', JSON.stringify(response.data))
-                navigate('library');
             }
-        })
+            return response;
+        }).catch((response) => response)
+        return result;
     }
 
     function logoutUser() {

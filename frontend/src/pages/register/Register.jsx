@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import axios from 'axios';
 import "./Register.css";
 import Button from '../../components/Button/Button'
+import NotificationBar from "../../components/NotificationBar/NotificationBar";
 
 export default function Register() {
     
@@ -26,10 +27,6 @@ export default function Register() {
         });
     };
 
-    const onChange = (e) => {
-        
-    } 
-
     return (
         <>
         <div className="background">
@@ -47,9 +44,9 @@ export default function Register() {
 
 
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
-            <input {...register("username", { required: true })} type="text" name="username" placeholder="الاسم"></input>
-            <input {...register("email", { required: true })} type="email" name="email" placeholder="البريد الالكتروني"></input>
-            <input {...register("password", { required: true })} type="password" name="password" placeholder="كلمة المرور"></input>
+            <input {...register("username")} required type="text" name="username" placeholder="الاسم"></input>
+            <input {...register("email")} required type="email" name="email" placeholder="البريد الالكتروني"></input>
+            <input {...register("password")} required type="password" name="password" placeholder="كلمة المرور"></input>
             <Button placeholder={"تسجيل"}></Button>
         </form>
         </div>

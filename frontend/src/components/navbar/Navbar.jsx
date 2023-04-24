@@ -7,6 +7,7 @@ import { ReactComponent as LogoutImg } from '../../media/common/logout.svg';
 import LoginPop from '../LoginPop/LoginPop';
 import { Link, useNavigate } from 'react-router-dom';
 
+
 export default function Navbar() {
 
     const {user, logoutUser} = useContext(AuthContext); 

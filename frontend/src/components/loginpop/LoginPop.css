@@ -32,6 +32,15 @@
     width: 100%;
     height: 10%;
     box-shadow: 0 1px 5px rgb(0 0 0 / 50%);
+
+    position: relative;
+}
+
+#popup-title {
+    font-size: 1.125rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #close {
@@ -58,7 +67,7 @@
 
 .popup-footer {
     height: 10%;
-}
+}   
 
 .popup-footer * {
     font-size: 0.85rem;

@@ -1,0 +1,22 @@
+.notif-snackbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    border-radius: 10px;
+    width: 250px;
+    height: 100px;
+
+    top: 2.5%;
+    z-index: 99;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);    
+    
+    background-color: white;
+}
+
+.notif-snackbar * {
+    color:black;
+}
