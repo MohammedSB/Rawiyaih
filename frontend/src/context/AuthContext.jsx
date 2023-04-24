@@ -9,20 +9,20 @@ const AuthContext = createContext();
 
 export default AuthContext;
 
+const getTokens = () => localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null;
+function getUser() {
+    if (localStorage.getItem('authTokens')) {
+        let data = jwt_decode(localStorage.getItem('authTokens'));
+        let user_info = {
+            username: data.username
+        } 
+        return user_info;
+    }
+    return null
+}
+
 export function AuthProvider() {
 
-    const getTokens = () => localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null;
-    function getUser() {
-        if (localStorage.getItem('authTokens')) {
-            let data = jwt_decode(localStorage.getItem('authTokens'));
-            let user_info = {
-                username: data.username
-            } 
-            return user_info;
-        }
-        return null
-    }
-    
     let [authTokens, setAuthTokens] = useState(() => getTokens());
     let [user, setUser] = useState(() => getUser());
     const navigate = useNavigate();
@@ -49,7 +49,7 @@ export function AuthProvider() {
         navigate('/');
     }
 
-    let contextData = {
+    const contextData = {
         
         user:user,
         setUser: setUser,

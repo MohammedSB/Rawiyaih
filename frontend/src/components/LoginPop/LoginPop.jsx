@@ -8,10 +8,12 @@ import { useContext } from "react";
 import AuthContext from "../../context/AuthContext";
 import Button from "../Button/Button";
 import { useNavigate } from "react-router-dom";
-import NotificationBar from "../NotificationBar/NotificationBar";
+import Snackbar from "../Snackbar/Snackbar";
+import SnackbarContext from "../../context/SnackbarContext";
 
 export default function LoginPop({toggleShowLogin}) {
 
+    const {setSnackbar} = useContext(SnackbarContext)
     const {loginUser} = useContext(AuthContext);
     const navigate = useNavigate();
 
@@ -24,7 +26,10 @@ export default function LoginPop({toggleShowLogin}) {
             if (r?.status === 200) { // Successful login
                 navigate('/library');
             } else if (r?.response.status === 401) { // Wrong login credentials
-                console.log("error");
+                setSnackbar({
+                    title: "حدث خطأ",
+                    content: "الرجاء التأكد من اسم المستخدم وكلمة المرور"
+                })
             } else {
                 console.log(r);
                 console.log('bad error');

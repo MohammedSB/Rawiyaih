@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import axios from 'axios';
 import "./Register.css";
 import Button from '../../components/Button/Button'
-import NotificationBar from "../../components/NotificationBar/NotificationBar";
 
 export default function Register() {
     
