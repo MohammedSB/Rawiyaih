@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import Snackbar from "../Snackbar/Snackbar";
 import SnackbarContext from "../../context/SnackbarContext";
 
+
 export default function LoginPop({toggleShowLogin}) {
 
     const {setSnackbar} = useContext(SnackbarContext)
@@ -25,14 +26,20 @@ export default function LoginPop({toggleShowLogin}) {
         .then((r) => {
             if (r?.status === 200) { // Successful login
                 navigate('/library');
+                setSnackbar({
+                    content: "تم تسجيل الدخول بنجاح",
+                    success: true,
+                })
             } else if (r?.response.status === 401) { // Wrong login credentials
                 setSnackbar({
-                    title: "حدث خطأ",
-                    content: "الرجاء التأكد من اسم المستخدم وكلمة المرور"
+                    content: "الرجاء التأكد من اسم المستخدم وكلمة المرور",
+                    success: false,
                 })
             } else {
-                console.log(r);
-                console.log('bad error');
+                setSnackbar({
+                    content: "حدث خطأ",
+                    success: false,
+                })
             }
         })
     }

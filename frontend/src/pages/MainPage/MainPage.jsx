@@ -6,6 +6,8 @@ export default function MainPage() {
         <>
         <Navbar></Navbar>
         <div className="info-container">
+            <p className="info-title">اهلآ بك في راوية</p>    
+            <p>موقع لكتابة و نشر القصص و الروايات العربية</p>    
         </div>
         </>
     )

@@ -1,15 +1,28 @@
 body {
     background-color:#E4E3D5;
+    
 }
 
 .info-container {
     background-image: url(../../media/about_page.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 700px;    
+    padding-right: 10%; padding-top: 100px;
+    
+    border-width: 0 0 20px 0;
+    background-color: white;
+
+    min-height: 400px;    
+}
+
+.info-container * {
+    color:white;
+    font-size: 2rem;
 }
 
 .info-container img {
     object-fit: contain;
+}
+
+.info-title {
+    font-size: 2.5rem;
+    font-weight: 700;
 }

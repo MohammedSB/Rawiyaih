@@ -35,8 +35,5 @@
 .snackbar * {
     color:black;
     font-size: 18px;
-}
-
-.snackbar-title {
-    font-size: 1.0625rem;
+    font-weight: 600;
 }
