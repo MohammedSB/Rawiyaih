@@ -1,4 +1,4 @@
-.background {
+.register-background {
     background: rgba(0, 0, 0, 0.6);
     width: 100%;
     height: 100%;
@@ -10,7 +10,7 @@
     top: 0;
 }
 
-.container {
+.register-container {
     height: 650px;
     width: 550px;
     background-color: white;
@@ -21,7 +21,7 @@
     text-align: center;
 }
 
-.header {
+.register-header {
     color:white;
     width: 100%;
     height: 7.5%;
@@ -32,7 +32,7 @@
     align-items: center;
 }
 
-.title {
+.register-title {
     font-size: 1.125rem;
     height: 10%;
     display: flex;
@@ -41,16 +41,16 @@
     color:black;
 }
 
-.form {
+.register-form {
     position: relative;
-    height: 75%;
+    height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
 
-.form input, input:active {
+.register-form input, input:active {
     color:black;
     padding: 6px 12px 6px 10px;
     border-width: 1px;
@@ -58,4 +58,8 @@
     width: 60%;
     border-radius: 10px;
     outline: none;
+}
+
+.register-footer * {
+    color:black;
 }

@@ -28,26 +28,31 @@ export default function Register() {
 
     return (
         <>
-        <div className="background">
-        <div className="container">
+        <div className="register-background">
+        <div className="register-container">
 
         <Link to="/" style={{textDecoration:'none'}}>
-            <div className="header">
+            <div className="register-header">
                 الصفحة الرئيسية
             </div>  
         </Link>
 
-        <div className="title">
+        <div className="register-title">
             انشاء حساب جديد
         </div>
 
 
-        <form className="form" onSubmit={handleSubmit(onSubmit)}>
+        <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
             <input {...register("username")} required type="text" name="username" placeholder="الاسم"></input>
             <input {...register("email")} required type="email" name="email" placeholder="البريد الالكتروني"></input>
             <input {...register("password")} required type="password" name="password" placeholder="كلمة المرور"></input>
             <Button placeholder={"تسجيل"}></Button>
         </form>
+
+        <div className="register-footer">
+            <Link to="/login">تسجيل الدخول</Link>
+        </div>
+
         </div>
         </div>
         </>

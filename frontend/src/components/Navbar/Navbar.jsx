@@ -39,7 +39,7 @@ export default function Navbar() {
             
             {user
             ?
-            <div className='navbar-item' style={{color:"#DAA520"}} >ابدا الكتابة</div>
+            <div className='navbar-item' style={{color:"#DAA520"}} onClick={() => navigate('/myworks')}>ابدا الكتابة</div>
             :
             <div className='navbar-item' style={{color:"#DAA520"}} onClick={() => navigate('/register')}>ابدا الكتابة</div>
             }

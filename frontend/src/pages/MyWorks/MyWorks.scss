@@ -1,0 +1,44 @@
+@use '../../media/global';
+
+$mw_container_width: 70%;
+
+.mw-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mw-background * {
+    color:black;
+}
+
+.mw-container {
+    margin-top: 50px;
+    width: $mw_container_width;
+}
+
+.mw-books-container {
+    margin-top: 25px;
+    box-shadow: 0 1px 5px rgb(0 0 0 / 50%);
+    background-color:white;
+}
+
+.mw-header {
+    font-weight: bold;
+    font-size: 48px;
+}
+
+.mw-footer {
+    margin-top: 24px;
+}
+
+#new-book {
+    width: 200px;
+    color:white;
+    background-color: rgb(109, 3, 3);
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;    
+    height: 1.75em;
+    transition: all .2s ease-in-out; 
+}
