@@ -50,7 +50,7 @@
     align-items: center;
 }
 
-.register-form input, input:active {
+.register-form input, .register-form input:active {
     color:black;
     padding: 6px 12px 6px 10px;
     border-width: 1px;

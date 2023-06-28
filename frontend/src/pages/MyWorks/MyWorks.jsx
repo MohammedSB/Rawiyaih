@@ -14,7 +14,7 @@ export default function MyWorks() {
             <div className="mw-header">كتبي</div>
 
             <div className="mw-books-container">
-            <Book></Book>
+            <Book title="thirty days" author="mohammed"></Book>
             </div>
 
             <div className="mw-footer pull-left">
