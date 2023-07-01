@@ -51,6 +51,7 @@ INSTALLED_APPS = [
 
     'base.apps.BaseConfig',
     'api.users.apps.UsersConfig',
+    'api.books.apps.BooksConfig',
 
     'rest_framework',
     'rest_framework_simplejwt.token_blacklist',

@@ -27,7 +27,6 @@ def userCreate(request):
     request.data['password'] = make_password(request.data['password'])
     
     serializer = UserSerializer(data=request.data)
-    print(serializer)
     if serializer.is_valid():
         serializer.save()
 
@@ -37,7 +36,6 @@ def userCreate(request):
 @authentication_classes([SessionAuthentication, BasicAuthentication])
 @permission_classes([IsAuthenticated])
 def userLogin(request):
-    print(request)
     content = {
         'user': str(request.user),  # `django.contrib.auth.User` instance.
         'auth': str(request.auth), 

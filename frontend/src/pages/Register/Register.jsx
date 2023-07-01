@@ -16,7 +16,6 @@ export default function Register() {
             email: data.email,
             password: data.password,
         }
-        console.log(payload);
         axios.post('http://127.0.0.1:8000/api/users/create-user/', payload)
         .then(function (response) {
             navigate('/');
