@@ -16,9 +16,27 @@ export default function MainPage() {
 
         {/* What to do o+n the website container */}
         <div className="wtd-container">
-        <WhatToDo icon={pen} title={"أنشر قصصك و رواياتك"}></WhatToDo>
-        <WhatToDo icon={community} title="تعرف على مجتمع من القراء و الكتاب"></WhatToDo>
-        <WhatToDo icon={book} title="إقراء احدث الروايات"></WhatToDo>
+        <WhatToDo 
+            icon={pen}
+            title={"أنشر قصصك و رواياتك"}
+            content={"شاركنا احدث رواياتك و انشرها بين القراء"}
+            buttonContent={"ابدأ الكتابة"}
+            >
+        </WhatToDo>
+        <WhatToDo 
+            icon={community}
+            title={"تعرف على قراء وكتاب"}
+            content={"مجتمع يضم المهتمين بكتابة القصص و الروايات"}
+            buttonContent={"سجل الآن"}
+            >
+        </WhatToDo>
+        <WhatToDo 
+            icon={book} 
+            title={"إقراء احدث الروايات"} 
+            content={"مجموعة من احدث ما خطتة أقلام كتابّ موقع راوية"}
+            buttonContent={"ابدأ القراءة"}
+            >
+        </WhatToDo>
         </div>
         </>
     )
