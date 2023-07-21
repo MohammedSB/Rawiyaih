@@ -1,8 +1,8 @@
+import "./Register.scss";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from 'axios';
-import "./Register.css";
 import Button from '../../components/Button/Button'
 
 export default function Register() {
@@ -49,7 +49,7 @@ export default function Register() {
         </form>
 
         <div className="register-footer">
-            <Link to="/login">تسجيل الدخول</Link>
+            <Link id="register-to-login" to="/login">تسجيل الدخول</Link>
         </div>
 
         </div>

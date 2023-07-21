@@ -1,4 +1,6 @@
 @use "sass:math";
+@import '../../media/global';
+
 $background-color: rgba(255, 255, 255, 0.577);
 
 .wtd-box-body * {
@@ -66,10 +68,10 @@ $background-color: rgba(255, 255, 255, 0.577);
     background-color: $background-color;
     border-radius: 5px;
     border-width: 1px;
-    border-color: rgb(109, 3, 3);
+    border-color: $theme_red;
     border-style: solid;
 
-    color: rgb(109, 3, 3);
+    color: $theme_red;
 
     -webkit-background-clip: padding-box; 
     -moz-background-clip: padding; 
@@ -78,6 +80,6 @@ $background-color: rgba(255, 255, 255, 0.577);
 
 .wtd-box:hover #wtd-box-body-button { 
     border: none;
-    background-color: rgb(109, 3, 3);
+    background-color: $theme_red;
     color: white;
 }

@@ -1,12 +1,15 @@
 @use "sass:math";
+@import "../../media/global";
 
 body {
-    background-color:#E4E3D5;
+    background-color: $theme_background;
     
 }
 
 .info-container {
-    background-image: url(../../media/about_page.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../../media/st.jpg);
     padding-right: 10%; padding-top: 100px;
     
     border-width: 0 0 20px 0;

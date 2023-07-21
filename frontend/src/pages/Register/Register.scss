@@ -1,13 +1,10 @@
-* {
-    direction: rtl;
-}
+@import '../../media/global';
 
-.popup {
+.register-background {
     background: rgba(0, 0, 0, 0.6);
     width: 100%;
     height: 100%;
     position: absolute;
-    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,41 +12,38 @@
     top: 0;
 }
 
-.popup-container {
-    position: fixed;
-    height: 600px;
-    width: 500px;
+.register-container {
+    height: 650px;
+    width: 550px;
     background-color: white;
     border-radius: 10px;
     -webkit-font-smoothing: antialiased;
-
+    
+    overflow: hidden;
     text-align: center;
 }
-.popup-container * {color: black;}
 
-.popup-header {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+.register-header {
+    color:white;
     width: 100%;
-    height: 10%;
+    height: 7.5%;
+    background-color: rgb(109, 3, 3);
     box-shadow: 0 1px 5px rgb(0 0 0 / 50%);
-
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#popup-title {
+.register-title {
     font-size: 1.125rem;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:black;
 }
 
-#close {
-    cursor: pointer;
-}
-
-.popup-form {
+.register-form {
     position: relative;
     height: 70%;
     display: flex;
@@ -58,7 +52,8 @@
     align-items: center;
 }
 
-.popup-form input,.popup-form input:active {
+.register-form input, .register-form input:active {
+    color:black;
     padding: 6px 12px 6px 10px;
     border-width: 1px;
     height: 1em;
@@ -67,11 +62,10 @@
     outline: none;
 }
 
-.popup-footer {
-    /* background-color: rgba(194, 194, 194, 0.548); */
-    height: 20%;
-}   
+.register-footer * {
+    color:black;
+}
 
-.popup-footer * {
-    font-size: 0.85rem;
+#register-to-login {
+    color: $theme_red;
 }

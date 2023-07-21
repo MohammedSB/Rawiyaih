@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import "./LoginPop.css";
+import "./LoginPop.scss";
 import { ReactComponent as Close } from '../../media/common/close.svg';
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -21,7 +21,6 @@ export default function LoginPop({toggleShowLogin}) {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
     const onSubmit = data => {
-        console.log(data);
         loginUser(data)
         .then((r) => {
             if (r?.status === 200) { // Successful login
@@ -62,7 +61,7 @@ export default function LoginPop({toggleShowLogin}) {
             </form>
 
             <div className="popup-footer">
-                <p>ليس لديك حساب؟<Link to="/register"> إنشاء حساب جديد</Link></p>
+                <p>ليس لديك حساب؟<Link id="popup-to-new-account" to="/register"> إنشاء حساب جديد</Link></p>
             </div>
 
             </div>

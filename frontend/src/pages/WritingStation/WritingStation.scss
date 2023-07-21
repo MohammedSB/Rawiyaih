@@ -1,9 +1,7 @@
+@import "../../media/global";
+
 .ws-container input, .ws-container textarea {
     color:black;
-}
-
-.ws-container textarea {
-    padding: 10px;
 }
 
 .ws-container {
@@ -15,4 +13,22 @@
 
 .ws-title-container {
     margin: 50px 0 50px 0;
+}
+
+#ws-title {
+    padding: 10px;
+    border-width: 0 0 2px;
+    background-color: $theme_background;
+    outline: 0;
+
+    min-width: 500px;
+}
+
+#ws-content {
+    padding: 10px;
+    color:black;
+    background-color: rgba(255, 255, 255, 0.758);
+    min-height: 500px;
+    min-width: 1000px;
+    overflow: auto;
 }

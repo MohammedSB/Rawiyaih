@@ -1,9 +1,12 @@
-import "./WhatToDo.scss"
+import { Link } from "react-router-dom"
+import "./WhatToDo.scss";
 
-export default function WhatToDo({icon, title, content, buttonContent}) {
+export default function WhatToDo({icon, title, content, buttonContent, to}) {
     return (
         <>
+        
         <div className="wtd-box-container">
+        <Link to={'/' + to}>
             <div className="wtd-box">
             <div className="wtd-box-icon">
                 <img src={icon}></img>
@@ -20,6 +23,7 @@ export default function WhatToDo({icon, title, content, buttonContent}) {
                 </button>
             </div>
             </div>
+            </Link>
         </div>
         </>
     )

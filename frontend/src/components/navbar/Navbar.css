@@ -5,6 +5,8 @@
 
 .navbar-container {
     height: 50px;
+    top: 0;
+    position: sticky;
     background-color: rgb(109, 3, 3);
 }
 

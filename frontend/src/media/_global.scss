@@ -1,7 +1,18 @@
+$theme_red: rgb(109, 3, 3);
+$theme_background: #E4E3D5; 
+
 .pull-right {
     float:right;
 }
 
 .pull-left {
     float:left;
+}
+
+a, a:focus, a:hover, a:visited {
+    outline: none;
+    border: none;
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color: white;
 }

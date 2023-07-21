@@ -1,11 +1,17 @@
+import "../../media/_global.scss";
+import "./MainPage.scss";
 import Navbar from "../../components/Navbar/Navbar";
-import "./MainPage.scss"
 import book from '../../media/misc/book.png';
 import community from '../../media/misc/community.png';
 import pen from '../../media/misc/pen.png';
 import WhatToDo from "../../components/WhatToDo/WhatToDo";
+import { useContext } from "react";
+import AuthContext from "../../context/AuthContext";
 
 export default function MainPage() {
+
+    const {user, logoutUser} = useContext(AuthContext);
+
     return(
         <>
         <Navbar></Navbar>
@@ -21,6 +27,7 @@ export default function MainPage() {
             title={"أنشر قصصك و رواياتك"}
             content={"شاركنا احدث رواياتك و انشرها بين القراء"}
             buttonContent={"ابدأ الكتابة"}
+            to={user ? "login" : "myworks"}
             >
         </WhatToDo>
         <WhatToDo 
@@ -28,6 +35,7 @@ export default function MainPage() {
             title={"تعرف على قراء وكتاب"}
             content={"مجتمع يضم المهتمين بكتابة القصص و الروايات"}
             buttonContent={"سجل الآن"}
+            to={user ? "library" : "register"}
             >
         </WhatToDo>
         <WhatToDo 
@@ -35,6 +43,7 @@ export default function MainPage() {
             title={"إقراء احدث الروايات"} 
             content={"مجموعة من احدث ما خطتة أقلام كتابّ موقع راوية"}
             buttonContent={"ابدأ القراءة"}
+            to={"library"}
             >
         </WhatToDo>
         </div>
