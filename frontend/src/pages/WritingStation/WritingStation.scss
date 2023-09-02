@@ -15,6 +15,10 @@
     margin: 50px 0 50px 0;
 }
 
+.ws-writingarea-container * {
+    color: black;
+}
+
 #ws-title {
     padding: 10px;
     border-width: 0 0 2px;
@@ -26,7 +30,6 @@
 
 #ws-content {
     padding: 10px;
-    color:black;
     background-color: rgba(255, 255, 255, 0.758);
     min-height: 500px;
     min-width: 1000px;

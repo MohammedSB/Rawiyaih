@@ -25,6 +25,7 @@ export function AuthProvider() {
 
     let [authTokens, setAuthTokens] = useState(() => getTokens());
     let [user, setUser] = useState(() => getUser());
+    let [loading, setLoading] = useState(true);
     const navigate = useNavigate();
 
     function loginUser(data) {
