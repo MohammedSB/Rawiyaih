@@ -1,5 +1,5 @@
 import './MyWorks.scss';        
-import {React, useContext} from "react";
+import {React, useContext, useEffect, useState} from "react";
 import Book from '../../components/Book/Book';
 import Navbar from '../../components/Navbar/Navbar';
 import AuthContext from "../../context/AuthContext";
@@ -8,14 +8,28 @@ import axios from 'axios';
 
 export default function MyWorks() {
 
+    let [books, setBooks] = useState([]);
     const {authTokens} = useContext(AuthContext);
 
-    const books = axios.get("http://127.0.0.1:8000/api/books/show-books/", {
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + String(authTokens.access)
-      },
-    }).then(e => console.log(e.data));
+    useEffect(() => {
+        getBooks();
+    }, [])
+
+    const getBooks = async () => {
+        const response = await axios.get("http://127.0.0.1:8000/api/books/show-books/", {
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + String(authTokens.access)
+        },
+        }).then(function(r) {
+            if (r.status == 200) {
+                return r.data;
+            }
+        });
+        setBooks(response.books)
+    }
+
+    console.log(books.map(e => e.title))
 
     return(
 
@@ -26,8 +40,10 @@ export default function MyWorks() {
         <div className='mw-container'>
             <div className="mw-header">كتبي</div>
 
-            <div className="mw-books-container">
-            <Book title="thirty days" author="mohammed"></Book>
+            <div className="mw-books-container"> 
+            {books.map(book => 
+                <Book key={book.id} title={book.title} author={book.author}></Book>
+            )}
             </div>
 
             <div className="mw-footer pull-left">
