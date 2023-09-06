@@ -9,7 +9,7 @@ from .serializers import BookSerializer
 from .models import Book
 
 @api_view(['POST'])
-def bookSave(request):
+def saveBook(request):
 
     # Add date created
     request.data["date_created"] = datetime.datetime.now()
@@ -30,4 +30,16 @@ def showBooks(request):
     serializer = BookSerializer(books, many=True)
 
     context = {'books': serializer.data}
+    return Response(context)
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def getBook(request):
+
+    book_id = request.query_params.get('id')
+
+    book = Book.objects.filter(id=book_id)
+    serializer = BookSerializer(book, many=True)
+
+    context = {'book': serializer.data}
     return Response(context)

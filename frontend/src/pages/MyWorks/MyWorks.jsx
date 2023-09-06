@@ -29,8 +29,6 @@ export default function MyWorks() {
         setBooks(response.books)
     }
 
-    console.log(books.map(e => e.title))
-
     return(
 
         <>
@@ -42,7 +40,12 @@ export default function MyWorks() {
 
             <div className="mw-books-container"> 
             {books.map(book => 
-                <Book key={book.id} title={book.title} author={book.author}></Book>
+                <Link to='/writing' state={{'book_id': book.id}}><Book
+                                                                key={book.id} 
+                                                                title={book.title} 
+                                                                author={book.author}
+                                                                is_publied={book.is_publied}>
+                                                                </Book></Link>
             )}
             </div>
 

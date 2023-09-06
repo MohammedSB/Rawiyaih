@@ -1,7 +1,7 @@
 import Navbar from '../../components/Navbar/Navbar';
 import './WritingStation.scss';
-import React, { useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 import Button from '../../components/Button/Button';
@@ -11,7 +11,30 @@ import AuthContext from '../../context/AuthContext';
 export default function WritingStation() {
 
     const navigate = useNavigate();
-    const {user} = useContext(AuthContext);
+    const {user, authTokens} = useContext(AuthContext);
+    const [book, setBook] = useState(0)
+
+    // Extract book ID if it's not a new book.
+    const location = useLocation();
+
+    console.log(book);
+
+    const getBook = async () => {
+        const response = await axios.get("http://127.0.0.1:8000/api/books/get-book/", {
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + String(authTokens.access)
+        },
+        params: {
+            id: location?.state?.book_id
+        }
+        }).then(function(r) {
+            if (r.status == 200) {
+                return r.data;
+            }
+        });
+        setBook(...response.book)
+    }
 
     const { register, handleSubmit, setValue, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
@@ -36,6 +59,7 @@ export default function WritingStation() {
           'content',
           {required: true}
         );
+        getBook();
       }, []);
 
     return (
@@ -44,9 +68,14 @@ export default function WritingStation() {
         <div className='ws-container'>
             <form onSubmit={handleSubmit(onSubmit)}>
             <div className='ws-title-container'>
-            <input id='ws-title' {...register("title", {required: true})} placeholder='العنوان' name='title' >
+            <input 
+            id='ws-title'
+            value={book?.title} 
+            {...register("title", {required: true})} 
+            placeholder='العنوان'
+            name='title'
+            >
             </input>
-
             </div>
 
             <div className='ws-writingarea-container'>
@@ -56,6 +85,7 @@ export default function WritingStation() {
                 onInput={(e) => {
                 setValue('content', e.currentTarget.textContent, { shouldValidate: true });}}
                 >  
+                {book?.content}
                 </div>
             </div>
             <Button placeholder={"حفظ"}></Button>

@@ -16,3 +16,8 @@ a, a:focus, a:hover, a:visited {
     color: inherit;
     -webkit-tap-highlight-color: white;
 }
+
+.expand:hover {
+    transform: scale(1.05); 
+    cursor: pointer;
+}
