@@ -11,13 +11,21 @@ from .models import Book
 @api_view(['POST'])
 def saveBook(request):
 
-    # Add date created
-    request.data["date_created"] = datetime.datetime.now()
-        
-    serializer = BookSerializer(data=request.data)
+    data = request.data
 
-    if serializer.is_valid():
-        serializer.save()
+    # Add date created
+    data["date_created"] = datetime.datetime.now()    
+    
+    # Whether the book is created
+    obj, not_created = Book.objects.update_or_create(
+        id=data['id'], defaults=data)
+    
+    if not_created:
+        serializer = BookSerializer(obj, data=data)
+        if serializer.is_valid():
+            serializer.save()
+    else:
+        serializer = BookSerializer(obj)
 
     return Response(serializer.data)
 

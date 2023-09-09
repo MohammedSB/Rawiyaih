@@ -40,12 +40,13 @@ export default function MyWorks() {
 
             <div className="mw-books-container"> 
             {books.map(book => 
-                <Link to='/writing' state={{'book_id': book.id}}><Book
-                                                                key={book.id} 
-                                                                title={book.title} 
-                                                                author={book.author}
-                                                                is_publied={book.is_publied}>
-                                                                </Book></Link>
+                <Book
+                key={book.id}
+                id={book.id} 
+                title={book.title} 
+                author={book.author}
+                is_publied={book.is_publied}>
+                </Book>
             )}
             </div>
 

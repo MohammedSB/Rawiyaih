@@ -16,8 +16,7 @@ export default function WritingStation() {
 
     // Extract book ID if it's not a new book.
     const location = useLocation();
-
-    console.log(book);
+    let book_id = location.state ? location.state.book_id : null;
 
     const getBook = async () => {
         const response = await axios.get("http://127.0.0.1:8000/api/books/get-book/", {
@@ -26,7 +25,7 @@ export default function WritingStation() {
             'Authorization': 'Bearer ' + String(authTokens.access)
         },
         params: {
-            id: location?.state?.book_id
+            id: book_id
         }
         }).then(function(r) {
             if (r.status == 200) {
@@ -37,8 +36,11 @@ export default function WritingStation() {
     }
 
     const { register, handleSubmit, setValue, watch, formState: { errors } } = useForm();
+
     const onSubmit = data => {
+        console.log(data);
         const payload = {
+            id: book_id,
             author: user.username,
             title: data.title,
             content: data.content,
@@ -55,40 +57,37 @@ export default function WritingStation() {
     };
 
     useEffect(() => {
-        register(
-          'content',
-          {required: true}
-        );
+        register('content');
         getBook();
-      }, []);
+      }, [register]);
 
     return (
         <>
         <Navbar></Navbar>
         <div className='ws-container'>
             <form onSubmit={handleSubmit(onSubmit)}>
+
             <div className='ws-title-container'>
-            <input 
-            id='ws-title'
-            value={book?.title} 
-            {...register("title", {required: true})} 
-            placeholder='العنوان'
-            name='title'
-            >
-            </input>
+                <input 
+                id='ws-title'
+                defaultValue={book?.title}
+                {...register('title',{required: true})}
+                placeholder='العنوان'
+                name='title'
+                >
+                </input>
             </div>
 
             <div className='ws-writingarea-container'>
-                <div 
-                contentEditable='true'
-                id="ws-content"
-                onInput={(e) => {
-                setValue('content', e.currentTarget.textContent, { shouldValidate: true });}}
-                >  
-                {book?.content}
-                </div>
+                <textarea 
+                id='ws-content'
+                defaultValue={book?.content}
+                {...register('content', {required: true})}
+                >
+                </textarea>
             </div>
-            <Button placeholder={"حفظ"}></Button>
+
+            <Button placeholder={'حفظ'}></Button>
             </form>
         </div>        
         </>
